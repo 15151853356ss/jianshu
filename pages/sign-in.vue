@@ -47,17 +47,17 @@
               <ul>
                   <li>
                       <nuxt-link to="/">
-                          <i class="fa fa-weixin"></i>
+                          <i class="fa fa-weixin weixin"></i>
                       </nuxt-link>
                   </li>
                   <li>
                       <nuxt-link to="/">
-                          <i class="fa fa-weibo"></i>
+                          <i class="fa fa-weibo weibo"></i>
                       </nuxt-link>
                   </li>
                   <li>
                       <nuxt-link to="/">
-                          <i class="fa fa-qq"></i>
+                          <i class="fa fa-qq qq"></i>
                       </nuxt-link>
                   </li>
               </ul>
