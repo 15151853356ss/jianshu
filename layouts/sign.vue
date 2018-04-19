@@ -9,8 +9,8 @@ export default {};
 </script>
 
 <style>
-body{
-    background-color: #f1f1f1;
+body {
+  background-color: #f1f1f1;
 }
 .sign {
   height: 100%;
@@ -20,12 +20,12 @@ body{
   min-height: 750px;
 }
 .sign:before {
-    width: 100%;
-    content: "";
-    display: inline-block;
-    height: 85%;
-    vertical-align: middle;
-    box-sizing: border-box;
+  width: 100%;
+  content: "";
+  display: inline-block;
+  height: 85%;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 .sign .logo {
   position: absolute;
@@ -80,14 +80,14 @@ body{
   height: 50px;
   padding: 4px 12px 4px 30px;
   border: 1px solid #c8c8c8;
-  border-radius: 2px;
+  border-bottom: 0;
   background-color: rgb(248, 248, 248);
 }
-.sign .main form .input-prepend:nth-of-type(1) input {
-  border-bottom: 0;
+.sign .main form .input-prepend:first-of-type input {
   border-radius: 2px 2px 0 0;
 }
-.sign .main form .input-prepend:nth-of-type(2) input {
+.sign .main form .input-prepend:last-of-type input {
+  border-bottom: 1px solid #c8c8c8;
   border-radius: 0 0 2px 2px;
 }
 .sign .main form .input-prepend i {
@@ -115,16 +115,48 @@ body{
   padding: 9px 18px;
   text-align: center;
   color: #fff;
-  background-color: #3194d0;
   border-radius: 25px;
   font-size: 18px;
   border: none;
   outline: none;
   clear: both;
+  display: block;
 }
-.sign .main form button:hover {
+.sign .main form button.sign-in-btn {
+  background-color: #3194d0;
+}
+.sign .main form button.sign-up-btn {
+  background-color: #42c02e;
+}
+.sign .main form button.sign-in-btn:hover {
   background-color: #187cb7;
   cursor: pointer;
+}
+.sign .main form button.sign-up-btn:hover {
+  background-color: #3db922;
+  cursor: pointer;
+}
+.sign .main form p.sign-up-msg {
+  font-size: 12px;
+  margin: 15px 0;
+  text-align: center;
+  line-height: 20px;
+  color: #969696;
+}
+.sign .main form .ssm {
+  position: relative;
+  line-height: 36px;
+}
+.sign .main form .send-ssm {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  width: 100px;
+  height: 36px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #42c02e;
+  text-align: center;
 }
 .sign .main .more-sign p {
   position: relative;
@@ -177,7 +209,8 @@ body{
   color: #498ad5;
 }
 @media (max-width: 768px) {
-  .sign ,body{
+  .sign,
+  body {
     background-color: white;
   }
   .sign .logo {
@@ -187,6 +220,5 @@ body{
     margin: 0 auto;
     box-shadow: none;
   }
-  
 }
 </style>
