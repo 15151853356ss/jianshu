@@ -90,6 +90,10 @@ body {
   border-bottom: 1px solid #c8c8c8;
   border-radius: 0 0 2px 2px;
 }
+.sign .main form .input-password input {
+  border-bottom: 1px solid #c8c8c8;
+  border-radius: 0 0 2px 2px;
+}
 .sign .main form .input-prepend i {
   position: absolute;
   left: 10px;
