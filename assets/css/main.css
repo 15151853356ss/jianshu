@@ -51,6 +51,7 @@ a:hover{
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .container::after{
     clear: both;
