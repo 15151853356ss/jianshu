@@ -55,6 +55,11 @@
             <!-- 右上角，登录和注册 -->
             <!-- 导航部分 -->
             <div class="container">
+              <div class="nav-header" @click="headerShow()">
+                <button>
+                  <i class="fa fa-bars"></i>
+                </button>
+              </div>
               <ul class="nav-list">
                 <li>
                   <nuxt-link class="active" to="/">
@@ -120,9 +125,23 @@ export default {
   name: "myHeader",
   data() {
     return {
-        userShow:false,
-        notifyShow:false
+      userShow: false,
+      notifyShow: false,
+      // headerShow: false
+      num: 0
     };
+  },
+  methods: {
+    headerShow() {
+      console.log("kj");
+      this.num++;
+      var menuShow = document.querySelector("ul.nav-list");
+      if (this.num % 2 == 0) {
+        menuShow.style.height = 0;
+      } else {
+        menuShow.style.height = "480px";
+      }
+    }
   }
 };
 </script>
@@ -215,9 +234,6 @@ nav .user .drop-menu {
   padding: 10px 0;
   font-size: 15px;
 }
-/* nav .user:hover .drop-menu {
-  display: block;
-} */
 nav .user .drop-menu li a {
   padding: 10px 20px;
   display: block;
@@ -233,47 +249,48 @@ nav .user .drop-menu li a i {
   display: inline-block;
   font-size: 20px;
 }
-nav .nav-list{
+nav .nav-list {
   margin: 0;
 }
-nav .nav-list::after{
+nav .nav-list::after {
   content: "";
   height: 0;
   display: block;
   visibility: hidden;
   clear: both;
 }
-nav .nav-list>li{
+nav .nav-list > li {
   float: left;
   margin-right: 5px;
 }
-nav .nav-list a{
+nav .nav-list a {
   display: block;
   height: 56px;
   line-height: 26px;
   padding: 15px;
 }
-nav .nav-list>li a.active{
+nav .nav-list > li a.active {
   color: #ea6f5a;
-  background-color: none!important;
+  background: none !important;
 }
-nav .nav-list>li a:hover{
+nav .nav-list > li a:hover {
   background-color: #f5f5f5;
 }
-nav .nav-list>li a i{
+nav .nav-list > li a i {
   margin-right: 5px;
   font-size: 20px;
 }
-nav .nav-list .search{
+nav .nav-list .search {
   padding-left: 15px;
   margin-right: 10px;
 }
-nav .nav-list .search form{
+nav .nav-list .search form {
   margin-bottom: 20px;
   position: relative;
   top: 9px;
 }
-nav .nav-list .search form .search-input{
+nav .nav-list .search form .search-input {
+  position: relative;
   width: 240px;
   height: 38px;
   font-size: 14px;
@@ -281,58 +298,123 @@ nav .nav-list .search form .search-input{
   border: 1px solid #eee;
   background-color: #eee;
   border-radius: 40px;
-  transition: width .5s;
 }
-nav .nav-list .search form .search-input:focus{
+nav .nav-list .search form .search-input:focus {
   width: 320px;
 }
-nav .nav-list .search form .search-btn{
+nav .nav-list .search form .search-btn {
   position: absolute;
   width: 30px;
   height: 30px;
   top: 4px;
   right: 5px;
   color: #969696;
-  text-align:center;
+  text-align: center;
   padding: 0;
 }
-nav .nav-list .search form .search-btn:hover{
+nav .nav-list .search form .search-btn:hover {
   background-color: none;
 }
-nav .nav-list .search form .search-input:focus + .search-btn{
+nav .search form .search-input:focus + .search-btn {
   background-color: #969696;
   color: #fff;
   border-radius: 50px;
 }
-nav .nav-list .search form .search-btn i{
-  display: block!important;
+nav .nav-list .search form .search-btn i {
+  display: block !important;
   margin: 0;
   text-align: center;
   line-height: 30px;
   font-size: 15px;
 }
-@media (max-width:1440px) {
-  nav .nav-list>li a>i{
+@media (max-width: 1440px) {
+  nav .nav-list > li a > i {
     display: none;
   }
-  nav .nav-list .search form .search-input{
+  nav .nav-list .search form .search-input {
     width: 160px;
   }
-  nav .nav-list .search form .search-input:focus{
+  nav .nav-list .search form .search-input:focus {
     width: 240px;
   }
 }
-@media (max-width:1080px) {
-  nav .nav-list li span{
+@media (max-width: 1080px) {
+  nav .nav-list li span {
     display: none;
   }
-  nav .nav-list>li a>i{
+  nav .nav-list > li a > i {
     display: block;
   }
 }
-@media (max-width:768px) {
-  nav .nav-list{
+@media (max-width: 768px) {
+  nav .nav-list li span {
+    display: block;
+  }
+  nav .nav-list > li a > i {
     display: none;
+  }
+  nav .nav-list .user li {
+    display: none;
+  }
+  nav .nav-list {
+    transition: height 0.5s;
+    overflow: hidden;
+    max-height: 340px;
+    width: 100%;
+    padding-right: 15px;
+    background: white;
+  }
+  nav .nav-list li {
+    float: none;
+    display: block;
+    border-bottom: 1px solid #f0f0f0;
+    margin-right: 10px;
+    line-height: 20px;
+    text-align: center;
+    width: 90vw;
+  }
+  nav .nav-header {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  nav .nav-header {
+    display: none;
+  }
+}
+nav .nav-header button {
+  padding: 11px 15px;
+  margin-top: 9px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: none;
+  outline: none;
+}
+nav .nav-header button:hover {
+  background-color: #f5f5f5;
+}
+nav .nav-header button i {
+  font-size: 18px;
+}
+@media (max-width: 767px) and (min-width: 320px) {
+  nav .nav-list .search form input {
+    width: 100% !important;
+    padding: 0 40px 0 20px;
+  }
+  nav .nav-list li a {
+    width: 100vw;
+    text-align: center;
+  }
+}
+@media (max-width: 319px) {
+ 
+  nav .nav-list .search form input{
+    width: 160px;
+  }
+  nav .nav-list .search form a {
+    display: none !important;
   }
 }
 </style>
