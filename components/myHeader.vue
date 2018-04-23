@@ -215,7 +215,7 @@ nav .user .avatar img {
   border: 1px solid #eee;
 }
 nav .user .drop-menu {
-  /* display: none; */
+  background: #fff;
   position: absolute;
   left: 0;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
