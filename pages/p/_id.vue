@@ -72,9 +72,9 @@
               </div>
               <!-- 更多分享 -->
               <div class="meta-bottom">
-                  <div class="like">
-                      <div class="like-btn">
-                          <a href="#">喜欢</a>
+                  <div class="like" :class="{'islike':islike}" @click="islike=!islike">
+                      <div class="like-btn" >
+                          <a href="javascript:void(0)">喜欢</a>
                       </div>
                       <div class="like-num">
                           <a href="#">50</a>
@@ -117,12 +117,18 @@ export default {
   },
   data() {
     return {
-        
+        islike:false
     };
   },
   components: {
     myHeader,
     myComment
+  },
+  methods: {
+
   }
 };
 </script>
+<style>
+
+</style>

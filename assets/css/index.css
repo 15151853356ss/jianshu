@@ -387,6 +387,29 @@
 .note .post .meta-bottom .like:hover{
     background: rgb(254, 247, 246);
 }
+.note .post .meta-bottom .like.islike{
+    background: #ea6f5a;
+}
+.like.islike .like-btn a{
+    color: #fff!important;
+}
+.like.islike .like-num a{
+    color: #fff!important;
+}
+.like.islike .like-num{
+    border-left-color: #fff!important;
+}
+.islike .like-btn:before{
+    animation: changelike 0.6s steps(19) forwards;
+}
+@keyframes changelike {
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
 .note .post .meta-bottom .like .like-btn{
     display: inline-block;
     padding: 13px 0 15px 0;
