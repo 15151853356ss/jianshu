@@ -245,6 +245,30 @@
     text-align: center;
     display: block;
 }
+.fa-star{
+    color: rgb(254, 200, 0);
+}
+.fa-twitter{
+    color: rgb(0, 170, 236);
+}
+.fa-facebook-official{
+    color: rgb(68, 96, 160);
+}
+.fa-google-plus{
+    color: rgb(250, 63, 45);
+}
+.dou{
+    color: rgb(48, 139, 29);
+}
+ul.popover{
+    margin: 0;
+}
+ul li{
+    padding-bottom: 3px;
+}
+  ul.popover li:hover{
+      background: #dcdcdc;    
+  }
 
 /* ***********************************内页布局开始*********************************** */
 .note{
@@ -481,5 +505,4 @@ i.qq{
     border-radius: 40px;
     text-align: center;
     color: #9b9b9b;
-   
 }

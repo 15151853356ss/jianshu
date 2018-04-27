@@ -81,18 +81,46 @@
                       </div>
                   </div>
                   <div class="share">
-                      <a href="#" class="share-btn">
+                      <a href="#" class="share-btn" v-tooltip="'分享到微信'">
                           <i class="fa fa-weixin weixin"></i>
                       </a>
-                      <a href="#" class="share-btn">
+                      <a href="#" class="share-btn" v-tooltip="'分享到微信'">
                           <i class="fa fa-weibo weibo"></i>
                       </a>
-                      <a href="#" class="share-btn">
+                      <a href="#" class="share-btn" v-tooltip="'分享到微信'">
                           <i class="fa fa-qq qq"></i>
                       </a>
-                      <a href="#" class="share-btn more-share">
+                      <v-popover class="more-share share-btn">
+                          <a href="#" class="more-share tooltip-target">
                           更多分享
                       </a>
+                      <template slot="popover">
+                          <div >
+                            <ul class="popover">
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                    分享到QQ空间
+                                </li>
+                                <li>
+                                    <i class="fa fa-twitter"></i>
+                                    分享到Twitter
+                                </li>
+                                <li>
+                                    <i class="fa fa-facebook-official"></i>
+                                    分享到Facebook
+                                </li>
+                                <li>
+                                    <i class="fa fa-google-plus"></i>
+                                    分享到Google+
+                                </li>
+                                <li>
+                                    <i class="dou">豆</i>
+                                    分享到豆瓣
+                                </li>    
+                            </ul>
+                            </div>
+                      </template>
+                      </v-popover>
                   </div>
               </div>
               <!-- 留言组件 -->
@@ -105,7 +133,10 @@
 
 <script>
 import myHeader from "~/components/myHeader";
-import myComment from '~/components/myComment';
+import myComment from "~/components/myComment";
+import Vue from "vue";
+import VTooltip from "v-tooltip";
+Vue.use(VTooltip);
 export default {
   head: {
     title: "简书文章详情页面-创作你的创作",
@@ -117,16 +148,14 @@ export default {
   },
   data() {
     return {
-        islike:false
+      islike: false
     };
   },
   components: {
     myHeader,
     myComment
   },
-  methods: {
-
-  }
+  methods: {}
 };
 </script>
 <style>
