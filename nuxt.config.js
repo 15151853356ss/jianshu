@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   plugins:[
-    {src='~/plugins/myPlugins',ssr:false}
+    {src:'~/plugins/myPlugins',ssr:false}
   ],
   /*
   ** Global CSS

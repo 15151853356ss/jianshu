@@ -49,12 +49,13 @@ export default {
 @import '../assets/scss/emoji-sprite.scss';
 
 .emoji {
+  border: 1px solid #dcdcdc;
   width: 380px;
   height: 186px;
   bottom: 30px;
   background: #fff;
   z-index: 10;
-  padding: 10px;
+  padding: 0;
   margin-right: 10px;
   .emoji-controller {
     height: 36px;
@@ -63,6 +64,7 @@ export default {
     li {
       float: left;
       width: 76px;
+      top: -10px;
       font-size: 12px;
       line-height: 36px;
       cursor: pointer;
@@ -84,6 +86,7 @@ export default {
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
+    top: -27px;
     li {
       font-size: 0;
       padding: 5px;

@@ -289,6 +289,7 @@ nav .nav-list .search form .search-input {
   border: 1px solid #eee;
   background-color: #eee;
   border-radius: 40px;
+  transition: width .5s;
 }
 nav .nav-list .search form .search-input:focus {
   width: 320px;
